@@ -73,7 +73,7 @@ dependencies {
 	compile group: "slimeknights", name: "TConstruct", version: "${tic_version}"
 	compileOnly "constructs-armory:conarm:${conarm_version}"
 	compile group: "li.cil.oc", name: "OpenComputers", version: "${oc_version}"
-	compileOnly "gregtechce:gregtech:${gregtech_version}"
+	compile "gregtechce:gregtech:${gregtech_version}"
 	compileOnly "mekanism:Mekanism:${mekanism_version}"
 }
 
