@@ -59,79 +59,53 @@ public abstract class ProcessorRecipeHandler extends AbstractRecipeHandler<Proce
 		
 
 		if (!ModCheck.gregtechLoaded() || recipe == null) return;
+		if (recipe.extras == null || recipe.extras.size() != 2) return;
 		
 		SimpleRecipeBuilder builder = null;
 		
+		
 		switch (this.recipeName) {
 		case "alloy_furnace":
-			if (recipe.extras != null && recipe.extras.size() == 2) { // power + time, checking it here just in case it may change at one point
-				builder = RecipeMaps.ALLOY_SMELTER_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
-			}
+			builder = RecipeMaps.ALLOY_SMELTER_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
 			break;
 		case "isotope_separator":
-			if (recipe.extras != null && recipe.extras.size() == 2) {
-				builder = RecipeMaps.THERMAL_CENTRIFUGE_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
-			}
+			builder = RecipeMaps.THERMAL_CENTRIFUGE_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
 			break;
 		case "fuel_reprocessor":
-			if (recipe.extras != null && recipe.extras.size() == 2) {
-				builder = RecipeMaps.CENTRIFUGE_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
-			}
+			builder = RecipeMaps.CENTRIFUGE_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
 			break;
 		case "supercooler":
-			if (recipe.extras != null && recipe.extras.size() == 2) {
-				builder = RecipeMaps.VACUUM_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
-			}
+			builder = RecipeMaps.VACUUM_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
 			break;
 		case "electrolyser":
-			if (recipe.extras != null && recipe.extras.size() == 2) {
-				builder = RecipeMaps.CENTRIFUGE_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
-			}
+			builder = RecipeMaps.CENTRIFUGE_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
 			break;
 		case "infuser":
-			if (recipe.extras != null && recipe.extras.size() == 2) {
-				builder = RecipeMaps.FLUID_CANNER_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
-			}
+			builder = RecipeMaps.FLUID_CANNER_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
 			break;
 		case "melter":
-			if (recipe.extras != null && recipe.extras.size() == 2) {
-				builder = RecipeMaps.FLUID_EXTRACTION_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
-			}
+			builder = RecipeMaps.FLUID_EXTRACTION_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
 			break;
 		case "pressurizer":
-			if (recipe.extras != null && recipe.extras.size() == 2) {
-				builder = RecipeMaps.COMPRESSOR_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
-			}
+			builder = RecipeMaps.COMPRESSOR_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
 			break;
 		case "chemical_reactor":
-			if (recipe.extras != null && recipe.extras.size() == 2) {
-				builder = RecipeMaps.CHEMICAL_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
-			}
+			builder = RecipeMaps.CHEMICAL_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
 			break;
 		case "salt_mixer":
-			if (recipe.extras != null && recipe.extras.size() == 2) {
-				builder = RecipeMaps.MIXER_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
-			}
+			builder = RecipeMaps.MIXER_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
 			break;
 		case "dissolver":
-			if (recipe.extras != null && recipe.extras.size() == 2) {
-				builder = RecipeMaps.CHEMICAL_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
-			}
+			builder = RecipeMaps.CHEMICAL_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
 			break;
 		case "extractor":
-			if (recipe.extras != null && recipe.extras.size() == 2) {
-				builder = RecipeMaps.FLUID_EXTRACTION_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
-			}
+			builder = RecipeMaps.FLUID_EXTRACTION_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
 			break;
 		case "centrifuge":
-			if (recipe.extras != null && recipe.extras.size() == 2) {
-				builder = RecipeMaps.CENTRIFUGE_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
-			}
+			builder = RecipeMaps.CENTRIFUGE_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
 			break;
 		case "rock_crusher":
-			if (recipe.extras != null && recipe.extras.size() == 2) {
-				builder = RecipeMaps.MACERATOR_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
-			}
+			builder = RecipeMaps.MACERATOR_RECIPES.recipeBuilder().EUt((int)(30*(double)recipe.extras.get(0))).duration((int)(20*(double)recipe.extras.get(1)));
 			break;
 		case "ingot_former":
 			break; // TODO
